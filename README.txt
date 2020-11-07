@@ -1,0 +1,139 @@
+This DATSETNAMEreadme.txt file was generated on YYYY-MM-DD by NAME
+<help text is included in angle brackets, and can be deleted before saving>
+
+
+GENERAL INFORMATION
+
+1. Title of Dataset: Behavioral, physiological, and neural signatures of surprise during naturalistic sports viewing
+
+2. Author Information
+	A. Principal Investigator Contact Information
+		Name: Kenneth Norman
+		Institution: Princeton University
+		Address: Princeton Neuroscience Institute
+		Email: knorman@princeton.edu
+
+	B. Associate or Co-investigator Contact Information
+		Name: James Antony
+		Institution: Princeton University
+		Address: Princeton Neuroscience Institute
+		Email: james.ward.antony@gmail.com
+
+	C. Alternate Contact Information
+		Name: Samuel McDougle
+		Institution: Yale University
+		Address: Department of Psychology
+		Email: samuel.mcdougle@yale.edu
+
+3. Date of data collection (single date, range, approximate date) <suggested format YYYY-MM-DD>: 2020-04-01 through 2020-10-31
+
+4. Geographic location of data collection <latitude, longiute, or city/region, State, Country, as appropriate>: Princeton, NJ, USA
+
+5. Information about funding sources that supported the collection of the data: MURI ONR grant N00014-17-1-2961.
+
+
+SHARING/ACCESS INFORMATION
+
+1. Licenses/restrictions placed on the data: N/A
+
+2. Links to publications that cite or use the data: https://www.biorxiv.org/content/10.1101/2020.03.26.008714v1
+
+3. Links to other publicly accessible locations of the data: Raw data on OpenNeuro: https://openneuro.org/datasets/ds003338
+
+4. Links/relationships to ancillary data sets: N/A
+
+5. Was data derived from another source? no
+	A. If yes, list source(s): 
+
+6. Recommended citation for this dataset: Antony, J. W., Hartshorne, T. H., Pomeroy, K., Gureckis, T. M., Hasson, U., McDougle, S. D., & Norman, K. A. (2020). Behavioral, physiological, and neural signatures of surprise during naturalistic sports viewing. BioRxiv.
+
+
+DATA & FILE OVERVIEW
+
+1. File List: See below for a grand overview. 
+<list all files (or folders, as appropriate for dataset organization) contained in the dataset, with a brief description>
+
+2. Relationship between files, if important: See AnalysisOverview.key file for graphical overview of how all of the latent variable and analysis scripts flow together. 
+
+3. Additional related data collected that was not included in the current data package: fMRI data from recall - please e-mail the Lead Contact (james.ward.antony@gmail.com) if interested!
+
+4. Are there multiple versions of the dataset? no
+	A. If yes, name of file(s) that was updated: 
+		i. Why was the file updated? 
+		ii. When was the file updated? 
+
+
+METHODOLOGICAL INFORMATION
+
+1. Description of methods used for collection/generation of data: See below for a grand overview. 
+<Include links or references to publications or other documentation containing experimental design or protocols used in data collection>
+
+2. Methods for processing the data: See below for a grand overview. 
+<describe how the submitted data were generated from the raw or collected data>
+
+3. Instrument- or software-specific information needed to interpret the data: MATLAB, Python, R. 
+<include full name and version of software, and any necessary packages or libraries needed to run scripts>
+
+4. Standards and calibration information, if appropriate: 
+
+5. Environmental/experimental conditions: See paper. 
+
+6. Describe any quality-assurance procedures performed on the data: MRIQC performs quality control checks on fMRIPREP analyses.
+
+7. People involved with sample collection, processing, analysis and/or submission: 
+
+
+DATA-SPECIFIC INFORMATION FOR: [FILENAME]
+<repeat this section for each dataset, folder or file, as appropriate>
+
+1. Number of variables: See grand overview below and respective code. 
+
+2. Number of cases/rows: See grand overview below and respective code. 
+
+3. Variable List: See grand overview below and respective code. 
+<list variable name(s), description(s), unit(s)and value labels as appropriate for each>
+
+4. Missing data codes: See grand overview below and respective code. 
+<list code/symbol and definition>n
+
+5. Specialized formats or other abbreviations used: See grand overview below and respective code. 
+
+---
+
+Grand overview of the data for the paper:
+
+Behavioral, physiological, and neural signatures of surprise during naturalistic sports viewing
+
+James W. Antony, Thomas H. Hartshorne, Ken Pomeroy, Todd M. Gureckis, Uri Hasson, Samuel D. McDougle, and Kenneth A. Norman
+
+Dataspace URL: https://doi.org/10.34770/r8b8-k094.
+
+Please direct questions / comments / concerns to james.ward.antony@gmail.com, ORCID: 0000-0003-0656-2170. 
+
+Collection Details:
+
+These data include the 20 main subjects from the paper (which underwent eye tracking and fMRI), 15 subjects from a non-fMRI control experiment, all analysis scrips (MATLAB, Python, and R), and plots that should be generated by the data. In the main experiment, behavioral data were collected using MATLAB's Psychtoolbox, fMRI data were collected on a 3-T Prisma scanner, and eye tracking data were collected using EyeLink 1000. In the control experiment, data were collected on a laptop using MATLAB's Psychtoolbox. Shared fMRI data are preprocessed, following the steps outlined in the paper. Raw data are available on OpenNeuro. 
+
+Contents: See AnalysisOverview.key file for graphical overview of how all of the latent variable and analysis scripts flow together. 
+
+'analysis': 
+All analysis scripts / some data pertaining to latent variable prep and analyzing the behavioral / physiological data. 
+
+'data':
+Behavioral: Behavioral (non-recall) data for fMRI data are in data/nonfmri/[1-20]/'[sub]_phase[1-8].mat', which are analyzed in 'XSubBehav.m'. Phases 1,3,5 are view runs, 2,4,6 are recall runs, 7 is the prediction test, and 8 is the value test. Games have a set viewing order for the analysis, which is in 'g_o.mat' within each corresponding folder. Behavioral (segmentation) data from non-fMRI subjects are in the same folder, as [101-115]/[sub]_phase1.mat'. These are analyzed in 'XSubSeg.m'. Scored recall data are in data/recall/'[sub]_game-[game #]_gtrial-[trial order, starting with 10].mat', with the 5 columns outlined for each TR as in the Methods section of the paper. These data are analyzed in 'XSubRecall.m'.
+Eye-tracking data: Raw data are in data/nonfmri/[1-20] as .asc files and are analyzed in 'XSubHR.m'. These were initially collected as .edfs and converted to .asc later. Note that only 14 of the subjects ended up having useable eye-tracking data.
+fMRI data: fMRI data are in data/bids/Norman/Antony/ss/. Subfolders: 
+'code' has the fMRI code to preprocess the data pre-fMRIPREP ('step1_preproc.sh' & 'step2_preproc.sh'), create ROI masks ('roi_masks3.sh'), import and concatenate the datasets ('ImpConcat.ipynb'), run and analyze GLMs ('GLM.ipynb and GLM_XSub.ipynb'), and run and analyze HMMs (first 'ISC-prep.ipynb', then 'Event_HMM-ROI.ipynb', then 'Event_HMM_XCond-ROI.ipynb'). Note that some '-ipynb' scripts have also been converted to '.py' files using 'jupyter nbconvert' and are run in parallel using '_srun' and '_batch' scripts, and you can see some functionality on the top of the scripts along these lines. Some GLM .csv outputs are also dumped in here and were loaded into Excel for Table S4.
+'derivatives' has the data. 'Fmriprep' has the fMRIPREP-preprocessed data needed to import the data into 'ImpConcat.ipynb'. From there, most data go into 'firstlevel', including after preparing the data in 'ISC-prep.ipynb' and 'GLM.ipynb'. In 'secondlevel', you can find the 'HMM' data outputs from 'Event-HMM-ROI.ipynb'. 
+'rois' has the ROIs (many more than were used, grabbed from various sources). 
+
+'exp':
+Contains files to run the experiment in Psychtoolbox, along with fMRI and eye tracking functions. Unfortunately, because the video files are copyrighted, we cannot include them with this release, but please reach out to the lead contact for questions! 
+
+'pics': 
+All raw .pdfs from the experiment, as well as others.
+
+'RStuff': 
+This folder contains ...
+1) CSVs output from Python / MATLAB 
+2) R code for importing the CSVs and running statistical analyses used in the paper (ssR.R for code, RStuff.rproj for project)
