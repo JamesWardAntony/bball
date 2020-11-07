@@ -1,0 +1,6 @@
+0.0.1  Initial data acquired
+NOTES:
+	- 7.1.20 defaced data placed (and renamed to T1w) in anat directories from data/extra/T1w_defaced for OpenNeuro upload and non-defaced put in data/extra/T1w_nondefaced
+TODOs:
+	- fill out dataset_description.json, README, sourcedata/README (if present)
+	- provide _events.tsv file for each _bold.nii.gz with onsets of events (see  '8.5 Task events'  of BIDS specification)

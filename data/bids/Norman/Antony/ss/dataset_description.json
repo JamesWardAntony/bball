@@ -1,0 +1,24 @@
+{
+    "Acknowledgements": "We thank the administrative staff of the Princeton Neuroscience Institute (especially Nick DePinto, Leigh Nystrom, and Mark Pinsk) and the Princeton 'Pygers' group for creating the Handbook for Reproducible Neuroimaging primarily focused on improving fMRI reproducibility using the BIDS format (headed up by Paula Brooks, Elizabeth McDevitt, Anne Mennen, and Sam Nastase).",
+    "Authors": [
+        "James Antony",
+        "Thomas Hartshorne",
+        "Ken Pomeroy",
+        "Todd Gureckis",
+        "Uri Hasson",
+        "Samuel McDougle",
+        "Kenneth Norman"
+    ],
+    "BIDSVersion": "1.0.1",
+    "DatasetDOI": "DOI for the dataset: TODO",
+    "Funding": [
+        "CV Starr Foundation (to JWA)",
+        "ONR MURI Grant N00014-17-1-2961 (to UH and KN)"
+    ],
+    "HowToAcknowledge": "Please acknowledge these data by citing the original paper: TODO",
+    "License": "CC0",
+    "Name": "bball",
+    "ReferencesAndLinks": [
+        "https://github.com/squinto13/bball"
+    ]
+}

@@ -1,0 +1,7 @@
+bball dataset: fMRI data of naturalistic basketball watching
+
+The 'bball' dataset includes 20 subjects watching the last 5 minutes of 9 NCAA games from the 2012 men's NCAA basketball ("March Madness") tournament. Data were collected from May to September 2019. The published study investigated behavioral, physiological, and neural correlates with the construct of surprise - defined here as changes in the likelihood of winning between two teams.
+
+Please contact James Antony (james.ward.antony@gmail.com) if you have any questions or observe irregularities in the data. 
+
+Please also see our Princeton dataspace folder for scripts, code, and preprocessed versions of the data: TODO.
